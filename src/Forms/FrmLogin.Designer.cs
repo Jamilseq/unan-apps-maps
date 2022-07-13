@@ -39,6 +39,7 @@ namespace src
             this.label4 = new System.Windows.Forms.Label();
             this.txtErrosUser = new System.Windows.Forms.Label();
             this.txtErrorsPassword = new System.Windows.Forms.Label();
+            this.linkRegister = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -139,6 +140,18 @@ namespace src
             this.txtErrorsPassword.Size = new System.Drawing.Size(0, 13);
             this.txtErrorsPassword.TabIndex = 8;
             // 
+            // linkRegister
+            // 
+            this.linkRegister.AutoSize = true;
+            this.linkRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.linkRegister.Location = new System.Drawing.Point(63, 631);
+            this.linkRegister.Name = "linkRegister";
+            this.linkRegister.Size = new System.Drawing.Size(81, 17);
+            this.linkRegister.TabIndex = 9;
+            this.linkRegister.TabStop = true;
+            this.linkRegister.Text = "Registrarse";
+            this.linkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRegister_LinkClicked);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +159,7 @@ namespace src
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(380, 840);
             this.ControlBox = false;
+            this.Controls.Add(this.linkRegister);
             this.Controls.Add(this.txtErrorsPassword);
             this.Controls.Add(this.txtErrosUser);
             this.Controls.Add(this.label3);
@@ -175,6 +189,7 @@ namespace src
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtErrosUser;
         private System.Windows.Forms.Label txtErrorsPassword;
+        private System.Windows.Forms.LinkLabel linkRegister;
     }
 }
 

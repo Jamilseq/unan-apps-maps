@@ -48,13 +48,6 @@ namespace src
                     txtErrorsRoutes.Text = "Ruta no encontrada";
                 }
             }
-            
-
-
-
-            
-
-
         }
     }
 }

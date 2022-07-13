@@ -1,4 +1,5 @@
-﻿using System;
+﻿using src.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,9 @@ namespace src
             FrmLogin Login = new FrmLogin();
             Login.MdiParent = this;
             Login.Show();
+
+            FrmRegister Register = new FrmRegister();
+            Register.MdiParent = this;
 
             FrmPrincipal Principal = new FrmPrincipal();
             Principal.MdiParent = this;

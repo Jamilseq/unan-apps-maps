@@ -1,8 +1,10 @@
-﻿using System;
+﻿using src.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,26 +26,31 @@ namespace src
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string DIR = Directory.GetCurrentDirectory();
+            string file = DIR.Replace(@"\bin\Debug", @"\Resourses\Files\Users.txt");
 
-            string carnet = txtUser.Text;
+            StreamReader sr = new StreamReader(file);
+            bool userExist = false;
+            string userDB = sr.ReadLine();
+            string passwordDB = sr.ReadLine();
+            string user = txtUser.Text;
             string password = txtPassword.Text;
+            bool isUserOk = false;
+            bool isPasswordOk = false;
 
-            if (string.IsNullOrWhiteSpace(carnet))
+            if (string.IsNullOrWhiteSpace(user))
             {
                 txtErrosUser.Text = "El carnet es requerido";
             }
             else
             {
-                if (carnet.Length < 8)
+                if (user.Length < 8)
                 {
                     txtErrosUser.Text = "El carnet debe ser mayor a 8";
                 }
                 else
                 {
-                    if (carnet != "22042658")
-                    {
-                        txtErrosUser.Text = "Usuario no encontrado";
-                    }
+                    isUserOk = true;                   
                 }
             }
 
@@ -59,20 +66,47 @@ namespace src
                 }
                 else
                 {
-                    if (password != "123456")
+                    isPasswordOk = true;
+                }
+            }
+
+            if(isUserOk && isPasswordOk)
+            {
+                while (!userExist && userDB != null)
+                {
+                    if (user.Equals(userDB) && password.Equals(passwordDB))
                     {
-                        txtErrorsPassword.Text = "La contraseña es incorrecta";
+                        userExist = true;
                     }
                     else
                     {
-                      
-                        FrmPrincipal Principal = new FrmPrincipal();
-                        Principal.MdiParent = this.MdiParent;
-                        Principal.Show();
-                        this.Close();
+                        user = sr.ReadLine();
+                        password = sr.ReadLine();
                     }
                 }
+
+                sr.Close();
+
+                if (userExist)
+                {
+                    FrmPrincipal Principal = new FrmPrincipal();
+                    Principal.MdiParent = this.MdiParent;
+                    Principal.Show();
+                    this.Close();
+                }
+                else
+                {
+                    txtErrosUser.Text = "Usuario no encontrado";
+                }
             }
+        }
+
+        private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmRegister Register = new FrmRegister();
+            Register.MdiParent = this.MdiParent;
+            Register.Show();
+            this.Close();
         }
     }
 }

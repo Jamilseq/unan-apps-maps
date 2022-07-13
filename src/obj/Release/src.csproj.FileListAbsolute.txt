@@ -13,3 +13,4 @@ C:\Users\Estudiantes\Desktop\unan-apps-maps-main\src\obj\Release\src.csproj.Gene
 C:\Users\Estudiantes\Desktop\unan-apps-maps-main\src\obj\Release\src.csproj.CoreCompileInputs.cache
 C:\Users\Estudiantes\Desktop\unan-apps-maps-main\src\obj\Release\src.exe
 C:\Users\Estudiantes\Desktop\unan-apps-maps-main\src\obj\Release\src.pdb
+C:\Users\Estudiantes\Desktop\unan-apps-maps-main\src\obj\Release\src.Forms.FrmRegister.resources
