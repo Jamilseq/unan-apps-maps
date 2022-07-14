@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,19 +18,14 @@ namespace src
             InitializeComponent();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonGetRoute_Click(object sender, EventArgs e)
         {
+            string DIR = Directory.GetCurrentDirectory();
+            string routes = DIR.Replace(@"\bin\Debug", @"\Resourses\Files\Routes.txt");
+            string topRoutes = DIR.Replace(@"\bin\Debug", @"\Resourses\Files\TopRoutes.txt");
             string location = txtLocation.Text.ToLower();
             string destination = txtSearch.Text.ToLower();
-
-            FrmRoutesScreen Route = new FrmRoutesScreen();
-            Route.MdiParent = this.MdiParent;
-
+            bool routeExist = false;
 
             if (string.IsNullOrWhiteSpace(destination) || string.IsNullOrWhiteSpace(location))
             {
@@ -37,9 +33,37 @@ namespace src
             }
             else
             {
-                //change for the files 
-                if (location == "puente" && destination == "tesoreria")
+                StreamReader sr = new StreamReader(routes);
+                string destinationDB = sr.ReadLine();
+                string locationDB = sr.ReadLine();
+                string imageIndex = sr.ReadLine();
+
+                while (!routeExist && locationDB != null && destinationDB != null && imageIndex != null)
                 {
+                    if (location.Equals(locationDB) && destination.Equals(destinationDB))
+                    {
+                        routeExist = true;
+                    }
+                    else
+                    {
+                        location = sr.ReadLine();
+                        destination = sr.ReadLine();
+                    }
+                }
+
+                sr.Close();
+
+                if (routeExist)
+                {
+                    FrmRoutesScreen Route = new FrmRoutesScreen(0);
+                    Route.MdiParent = this.MdiParent;
+
+                    FileStream fs = new FileStream(topRoutes, FileMode.Append);
+                    StreamWriter insert = new StreamWriter(fs);
+
+                    insert.WriteLine(location);
+                    insert.Close();
+
                     Route.Show();
                     this.Close();
                 }
@@ -47,6 +71,7 @@ namespace src
                 {
                     txtErrorsRoutes.Text = "Ruta no encontrada";
                 }
+
             }
         }
     }

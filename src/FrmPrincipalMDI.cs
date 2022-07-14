@@ -30,10 +30,10 @@ namespace src
             FrmPrincipal Principal = new FrmPrincipal();
             Principal.MdiParent = this;
 
-            FrmRoutesScreen Routes = new FrmRoutesScreen();
+            FrmRoutesScreen Routes = new FrmRoutesScreen(0);
             Routes.MdiParent = this;
 
-            FrmVRScreen VR = new FrmVRScreen();
+            FrmVRScreen VR = new FrmVRScreen(0);
             VR.MdiParent = this;
             
         }

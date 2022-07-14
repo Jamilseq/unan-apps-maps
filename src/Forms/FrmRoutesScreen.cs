@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,15 @@ namespace src
 {
     public partial class FrmRoutesScreen : Form
     {
-        public FrmRoutesScreen()
+        public FrmRoutesScreen(int index)
         {
             InitializeComponent();
+        }
+
+        private void FrmRoutesScreen_Load(object sender, EventArgs e)
+        {
+
+            //this.BackgroundImage = images[index];
         }
 
         private void buttonCloseRoute_Click(object sender, EventArgs e)

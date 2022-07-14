@@ -144,6 +144,7 @@ namespace src
             // 
             this.linkRegister.AutoSize = true;
             this.linkRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.linkRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(128)))), ((int)(((byte)(237)))));
             this.linkRegister.Location = new System.Drawing.Point(63, 631);
             this.linkRegister.Name = "linkRegister";
             this.linkRegister.Size = new System.Drawing.Size(81, 17);
@@ -172,7 +173,6 @@ namespace src
             this.Name = "FrmLogin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,19 +12,26 @@ namespace src
 {
     public partial class FrmVRScreen : Form
     {
-        public FrmVRScreen()
+        private bool index;
+
+        public FrmVRScreen(int index)
         {
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void FrmVRScreen_Load(object sender, EventArgs e)
         {
-
+            //this.BackgroundImage = "path img";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonCloseRouteVR_Click(object sender, EventArgs e)
         {
+            int indexImg = 0;
 
+            FrmRoutesScreen Route = new FrmRoutesScreen(indexImg);
+            Route.MdiParent = this.MdiParent;
+            Route.Show();
+            this.Close();
         }
     }
 }

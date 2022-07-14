@@ -23,9 +23,6 @@ namespace src.Forms
             string DIR = Directory.GetCurrentDirectory();
             string file = DIR.Replace(@"\bin\Debug", @"\Resourses\Files\Users.txt");
 
-            FileStream fs = new FileStream(file, FileMode.Append);
-            StreamWriter insert = new StreamWriter(fs);
-
             string user = txtUser.Text.ToLower();
             string password = txtPassword.Text.ToLower();
             string passwordConfirmation = txtPasswordConfirmation.Text.ToLower();
@@ -45,8 +42,14 @@ namespace src.Forms
                 }
                 else
                 {
+                    txtUserError.Text = "";
                     isUserOk = true;
                 }
+            }
+
+            if (string.IsNullOrWhiteSpace(passwordConfirmation))
+            {
+                txtPasswordConfirmationErrors.Text = "La confirmacion de la contraseña es requerida";
             }
 
             if (string.IsNullOrWhiteSpace(password))
@@ -61,22 +64,34 @@ namespace src.Forms
                 }
                 else
                 {
-                    if(password != passwordConfirmation)
-                    {
-                        txtPasswordConfirmationErrors.Text = "La confirmacion de la contraseña no coincide";
-                    }
-                    else
-                    {
-                        isPasswordOk = true;
-                    }
+                    txtPasswordError.Text = "";
                 }
+              
+                if (password != passwordConfirmation)
+                {
+                    txtPasswordConfirmationErrors.Text = "La confirmacion de la contraseña no coincide";
+                }
+                else
+                {
+                    txtPasswordConfirmationErrors.Text = "";
+                    isPasswordOk = true;
+                }
+                
             }
 
-            if(isUserOk && isPasswordOk)
+            if (isUserOk && isPasswordOk)
             {
+                FileStream fs = new FileStream(file, FileMode.Append);
+                StreamWriter insert = new StreamWriter(fs);
+
                 insert.WriteLine(user);
                 insert.WriteLine(password);
                 insert.Close();
+
+                FrmPrincipal Principal = new FrmPrincipal();
+                Principal.MdiParent = this.MdiParent;
+                Principal.Show();
+                this.Close();
             }
         }
 

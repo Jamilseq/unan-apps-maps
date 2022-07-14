@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCloseRouteVR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +63,6 @@
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "10 Mtr";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -116,30 +115,30 @@
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonCloseRouteVR
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Location = new System.Drawing.Point(228, 749);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 41);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonCloseRouteVR.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonCloseRouteVR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCloseRouteVR.BackgroundImage")));
+            this.buttonCloseRouteVR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonCloseRouteVR.Location = new System.Drawing.Point(228, 749);
+            this.buttonCloseRouteVR.Name = "buttonCloseRouteVR";
+            this.buttonCloseRouteVR.Size = new System.Drawing.Size(112, 41);
+            this.buttonCloseRouteVR.TabIndex = 2;
+            this.buttonCloseRouteVR.UseVisualStyleBackColor = false;
+            this.buttonCloseRouteVR.Click += new System.EventHandler(this.buttonCloseRouteVR_Click);
             // 
             // FrmVRScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(380, 840);
             this.ControlBox = false;
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonCloseRouteVR);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmVRScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmVRScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -157,6 +156,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCloseRouteVR;
     }
 }

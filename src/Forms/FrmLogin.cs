@@ -19,22 +19,14 @@ namespace src
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string DIR = Directory.GetCurrentDirectory();
             string file = DIR.Replace(@"\bin\Debug", @"\Resourses\Files\Users.txt");
 
-            StreamReader sr = new StreamReader(file);
             bool userExist = false;
-            string userDB = sr.ReadLine();
-            string passwordDB = sr.ReadLine();
-            string user = txtUser.Text;
-            string password = txtPassword.Text;
+            string user = txtUser.Text.ToLower();
+            string password = txtPassword.Text.ToLower();
             bool isUserOk = false;
             bool isPasswordOk = false;
 
@@ -72,6 +64,11 @@ namespace src
 
             if(isUserOk && isPasswordOk)
             {
+                StreamReader sr = new StreamReader(file);
+
+                string userDB = sr.ReadLine();
+                string passwordDB = sr.ReadLine();
+
                 while (!userExist && userDB != null)
                 {
                     if (user.Equals(userDB) && password.Equals(passwordDB))

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRoutesScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -39,8 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCloseRoute = new System.Windows.Forms.Button();
             this.buttonOptions = new System.Windows.Forms.Button();
-            this.routesImagesList = new System.Windows.Forms.ImageList(this.components);
-            this.panelBg = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -125,9 +122,9 @@
             // buttonCloseRoute
             // 
             this.buttonCloseRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.buttonCloseRoute.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCloseRoute.BackgroundImage")));
             this.buttonCloseRoute.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonCloseRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.buttonCloseRoute.Image = ((System.Drawing.Image)(resources.GetObject("buttonCloseRoute.Image")));
             this.buttonCloseRoute.Location = new System.Drawing.Point(252, 756);
             this.buttonCloseRoute.Name = "buttonCloseRoute";
             this.buttonCloseRoute.Size = new System.Drawing.Size(95, 41);
@@ -145,28 +142,6 @@
             this.buttonOptions.TabIndex = 2;
             this.buttonOptions.UseVisualStyleBackColor = true;
             // 
-            // routesImagesList
-            // 
-            this.routesImagesList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("routesImagesList.ImageStream")));
-            this.routesImagesList.TransparentColor = System.Drawing.Color.Transparent;
-            this.routesImagesList.Images.SetKeyName(0, "ruta 1.png");
-            this.routesImagesList.Images.SetKeyName(1, "ruta 2.png");
-            this.routesImagesList.Images.SetKeyName(2, "ruta 3.png");
-            this.routesImagesList.Images.SetKeyName(3, "ruta 4.png");
-            this.routesImagesList.Images.SetKeyName(4, "ruta 5.png");
-            this.routesImagesList.Images.SetKeyName(5, "ruta 6.png");
-            this.routesImagesList.Images.SetKeyName(6, "ruta 7.png");
-            this.routesImagesList.Images.SetKeyName(7, "ruta 8.png");
-            this.routesImagesList.Images.SetKeyName(8, "ruta 9.png");
-            this.routesImagesList.Images.SetKeyName(9, "ruta 10.png");
-            // 
-            // panelBg
-            // 
-            this.panelBg.Location = new System.Drawing.Point(2, 0);
-            this.panelBg.Name = "panelBg";
-            this.panelBg.Size = new System.Drawing.Size(380, 808);
-            this.panelBg.TabIndex = 3;
-            // 
             // FrmRoutesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,10 +153,10 @@
             this.Controls.Add(this.buttonOptions);
             this.Controls.Add(this.buttonCloseRoute);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelBg);
             this.Name = "FrmRoutesScreen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmRoutesScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -202,7 +177,5 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button buttonCloseRoute;
         private System.Windows.Forms.Button buttonOptions;
-        private System.Windows.Forms.ImageList routesImagesList;
-        private System.Windows.Forms.Panel panelBg;
     }
 }

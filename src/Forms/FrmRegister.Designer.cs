@@ -146,7 +146,7 @@
             this.txtPasswordConfirmationErrors.AutoSize = true;
             this.txtPasswordConfirmationErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordConfirmationErrors.ForeColor = System.Drawing.Color.Red;
-            this.txtPasswordConfirmationErrors.Location = new System.Drawing.Point(173, 608);
+            this.txtPasswordConfirmationErrors.Location = new System.Drawing.Point(116, 608);
             this.txtPasswordConfirmationErrors.Name = "txtPasswordConfirmationErrors";
             this.txtPasswordConfirmationErrors.Size = new System.Drawing.Size(0, 13);
             this.txtPasswordConfirmationErrors.TabIndex = 13;
@@ -181,6 +181,7 @@
             // 
             this.linkLogin.AutoSize = true;
             this.linkLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.linkLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(128)))), ((int)(((byte)(237)))));
             this.linkLogin.Location = new System.Drawing.Point(66, 654);
             this.linkLogin.Name = "linkLogin";
             this.linkLogin.Size = new System.Drawing.Size(90, 17);
