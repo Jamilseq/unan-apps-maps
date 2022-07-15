@@ -1,0 +1,41 @@
+auditorio hispamer
+biblioteca
+0
+0
+pabellon 24
+fernando gordillo
+1
+4
+vicerectoria general
+auditorio hispamer
+2
+5
+pabellon 24
+pabellon 32
+3
+6
+fernando gordillo
+cafeteria
+4
+3
+pabellon 16
+parqueo
+5
+2
+biblioteca
+pabellon 18
+6
+1
+pabellon 42
+libreria polisal
+7
+8
+tienda universitaria
+pabellon 50
+8
+6
+pabellon 10
+pabellon 30
+9
+5
+
