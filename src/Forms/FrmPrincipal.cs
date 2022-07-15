@@ -34,11 +34,12 @@ namespace src
             else
             {
                 StreamReader sr = new StreamReader(routes);
-                string destinationDB = sr.ReadLine();
                 string locationDB = sr.ReadLine();
+                string destinationDB = sr.ReadLine();
                 string imageIndex = sr.ReadLine();
+                string imageIndexVR = sr.ReadLine();
 
-                while (!routeExist && locationDB != null && destinationDB != null && imageIndex != null)
+                while (!routeExist && locationDB != null && destinationDB != null && imageIndex != null && imageIndexVR != null)
                 {
                     if (location.Equals(locationDB) && destination.Equals(destinationDB))
                     {
@@ -48,6 +49,8 @@ namespace src
                     {
                         location = sr.ReadLine();
                         destination = sr.ReadLine();
+                        imageIndex = sr.ReadLine();
+                        imageIndexVR = sr.ReadLine();
                     }
                 }
 
@@ -55,7 +58,7 @@ namespace src
 
                 if (routeExist)
                 {
-                    FrmRoutesScreen Route = new FrmRoutesScreen(0);
+                    FrmRoutesScreen Route = new FrmRoutesScreen(int.Parse(imageIndex), int.Parse(imageIndexVR), destinationDB);
                     Route.MdiParent = this.MdiParent;
 
                     FileStream fs = new FileStream(topRoutes, FileMode.Append);

@@ -13,15 +13,24 @@ namespace src
 {
     public partial class FrmRoutesScreen : Form
     {
-        public FrmRoutesScreen(int index)
+        private int _indexMap;
+        private int _indexVRMap;
+        private string destination;
+        public FrmRoutesScreen(int indexMap, int indexVRMap, string destination)
         {
             InitializeComponent();
+            this.destination = destination;
+            this._indexMap = indexMap;
+            this._indexVRMap = indexVRMap;
         }
 
         private void FrmRoutesScreen_Load(object sender, EventArgs e)
         {
-
-            //this.BackgroundImage = images[index];
+            
+            panelBgRoutesScreen.BackgroundImage = imageListRoutes.Images[_indexMap];
+            pictureBoxMiniVR.BackgroundImage = imageListRoutes.Images[2];
+            txtNameDestination.Text = destination;
+            
         }
 
         private void buttonCloseRoute_Click(object sender, EventArgs e)
@@ -31,6 +40,13 @@ namespace src
             Principal.Show();
             this.Close();
 
+        }
+
+        private void buttonOptions_Click(object sender, EventArgs e)
+        {
+            FrmVRScreen VR = new FrmVRScreen(_indexMap, _indexVRMap, destination);
+            VR.MdiParent = this.MdiParent;
+            VR.Show();
         }
     }
 }

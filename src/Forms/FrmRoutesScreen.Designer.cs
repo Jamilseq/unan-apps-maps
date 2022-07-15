@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRoutesScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtNameDestination = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMiniVR = new System.Windows.Forms.PictureBox();
             this.buttonCloseRoute = new System.Windows.Forms.Button();
             this.buttonOptions = new System.Windows.Forms.Button();
+            this.panelBgRoutesScreen = new System.Windows.Forms.Panel();
+            this.imageListRoutes = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMiniVR)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,10 +52,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtNameDestination);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBoxMiniVR);
             this.panel1.Location = new System.Drawing.Point(29, 587);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(318, 124);
@@ -78,15 +81,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "10 Mtr";
             // 
-            // label2
+            // txtNameDestination
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(137, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Biblioteca...";
+            this.txtNameDestination.AutoSize = true;
+            this.txtNameDestination.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameDestination.Location = new System.Drawing.Point(137, 46);
+            this.txtNameDestination.Name = "txtNameDestination";
+            this.txtNameDestination.Size = new System.Drawing.Size(169, 31);
+            this.txtNameDestination.TabIndex = 3;
+            this.txtNameDestination.Text = "Biblioteca...";
             // 
             // label1
             // 
@@ -109,15 +112,16 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxMiniVR
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 94);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxMiniVR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxMiniVR.ErrorImage = null;
+            this.pictureBoxMiniVR.InitialImage = null;
+            this.pictureBoxMiniVR.Location = new System.Drawing.Point(8, 14);
+            this.pictureBoxMiniVR.Name = "pictureBoxMiniVR";
+            this.pictureBoxMiniVR.Size = new System.Drawing.Size(123, 94);
+            this.pictureBoxMiniVR.TabIndex = 0;
+            this.pictureBoxMiniVR.TabStop = false;
             // 
             // buttonCloseRoute
             // 
@@ -141,6 +145,30 @@
             this.buttonOptions.Size = new System.Drawing.Size(118, 41);
             this.buttonOptions.TabIndex = 2;
             this.buttonOptions.UseVisualStyleBackColor = true;
+            this.buttonOptions.Click += new System.EventHandler(this.buttonOptions_Click);
+            // 
+            // panelBgRoutesScreen
+            // 
+            this.panelBgRoutesScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBgRoutesScreen.Location = new System.Drawing.Point(1, 2);
+            this.panelBgRoutesScreen.Name = "panelBgRoutesScreen";
+            this.panelBgRoutesScreen.Size = new System.Drawing.Size(379, 579);
+            this.panelBgRoutesScreen.TabIndex = 3;
+            // 
+            // imageListRoutes
+            // 
+            this.imageListRoutes.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListRoutes.ImageStream")));
+            this.imageListRoutes.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListRoutes.Images.SetKeyName(0, "ruta 1.png");
+            this.imageListRoutes.Images.SetKeyName(1, "ruta 2.png");
+            this.imageListRoutes.Images.SetKeyName(2, "ruta 3.png");
+            this.imageListRoutes.Images.SetKeyName(3, "ruta 4.png");
+            this.imageListRoutes.Images.SetKeyName(4, "ruta 5.png");
+            this.imageListRoutes.Images.SetKeyName(5, "ruta 6.png");
+            this.imageListRoutes.Images.SetKeyName(6, "ruta 7.png");
+            this.imageListRoutes.Images.SetKeyName(7, "ruta 8.png");
+            this.imageListRoutes.Images.SetKeyName(8, "ruta 9.png");
+            this.imageListRoutes.Images.SetKeyName(9, "ruta 10.png");
             // 
             // FrmRoutesScreen
             // 
@@ -150,6 +178,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(380, 840);
             this.ControlBox = false;
+            this.Controls.Add(this.panelBgRoutesScreen);
             this.Controls.Add(this.buttonOptions);
             this.Controls.Add(this.buttonCloseRoute);
             this.Controls.Add(this.panel1);
@@ -161,7 +190,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMiniVR)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,11 +200,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxMiniVR;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtNameDestination;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button buttonCloseRoute;
         private System.Windows.Forms.Button buttonOptions;
+        private System.Windows.Forms.Panel panelBgRoutesScreen;
+        private System.Windows.Forms.ImageList imageListRoutes;
     }
 }

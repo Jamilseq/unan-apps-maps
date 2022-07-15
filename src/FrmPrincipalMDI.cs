@@ -24,18 +24,6 @@ namespace src
             Login.MdiParent = this;
             Login.Show();
 
-            FrmRegister Register = new FrmRegister();
-            Register.MdiParent = this;
-
-            FrmPrincipal Principal = new FrmPrincipal();
-            Principal.MdiParent = this;
-
-            FrmRoutesScreen Routes = new FrmRoutesScreen(0);
-            Routes.MdiParent = this;
-
-            FrmVRScreen VR = new FrmVRScreen(0);
-            VR.MdiParent = this;
-            
         }
     }
 }
